@@ -88,6 +88,13 @@ page := pagination.NewPage(items,
 | `WithStartCursor[T](c)` | Set start cursor |
 | `WithEndCursor[T](c)` | Set end cursor |
 
+## Development
+
+```bash
+go test ./...
+go vet ./...
+```
+
 ## License
 
 MIT
