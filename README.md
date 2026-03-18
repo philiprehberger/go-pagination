@@ -4,7 +4,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/philiprehberger/go-pagination.svg)](https://pkg.go.dev/github.com/philiprehberger/go-pagination)
 [![License](https://img.shields.io/github/license/philiprehberger/go-pagination)](LICENSE)
 
-Cursor and offset pagination helpers for Go. Generic, zero dependencies.
+Cursor and offset pagination helpers for Go. Generic, zero dependencies
 
 ## Installation
 
