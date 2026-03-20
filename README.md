@@ -62,6 +62,35 @@ page := pagination.NewPage(items,
 // page.Items, page.PageInfo.Total, page.PageInfo.HasNextPage, etc.
 ```
 
+### Edge Cases
+
+```go
+import pagination "github.com/philiprehberger/go-pagination"
+
+// Empty results
+page := pagination.NewPage([]string{}, pagination.WithTotal[string](0))
+// Page{Items: [], Total: 0, HasNext: false}
+
+// Single item page
+page = pagination.NewPage([]string{"only"}, pagination.WithTotal[string](1))
+```
+
+### Combining Cursor and Offset
+
+```go
+import (
+    "net/url"
+    pagination "github.com/philiprehberger/go-pagination"
+)
+
+query, _ := url.ParseQuery("cursor=abc123&limit=10")
+params := pagination.ParseCursorWithOptions(query,
+    pagination.WithDefaultPageSize(20),
+    pagination.WithMaxPageSize(100),
+)
+// params.After = "abc123", params.PageSize = 10
+```
+
 ## API
 
 | Type / Function | Description |
